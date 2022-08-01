@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  vim.opt.clipboard = "unnamed"
+  return
+end
 vim.defer_fn(function()
   pcall(require, "impatient")
 end, 0)
