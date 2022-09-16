@@ -3,14 +3,39 @@ local M = {}
 M.alpha = {
   header = {
     val = {
-      "        ___               ___  ",
-     "       (0 0)             (o o) ",
-    "      (  V  )  ⊢γ ⇔ ⊨γ  (  V  ) ",
-    "      --m-m---------------m-m--",
-    "                                  ",
+     "   ___               ___  ",
+     "  (0 0)             (o o) ",
+     " (  V  )  ⊢γ ⇔ ⊨γ  (  V  )",
+     " --m-m---------------m-m--",
+     "                          ",
+     unpack((function()
+        local blackLine = "                          "
+        local dirname   = "⟶ " .. vim.fn.getcwd():match("^.+/(.+)$") .. " ⟵"
+        local dirnameLen = (string.len(dirname)-4)
+        if string.len(blackLine) > dirnameLen then
+          dirname = string.rep(" ", math.ceil((string.len(blackLine) - dirnameLen) / 2)) .. dirname
+        end
+        return {blackLine, dirname}
+     end)()),
     },
   },
 }
+
+M.nvterm =  {
+  terminals = {
+    type_opts = {
+      float = {
+        relative = "editor",
+        row = 0.2,
+        col = 0.15,
+        width = 0.8,
+        height = 0.6,
+        border = "single",
+      },
+    }
+  }
+}
+
 M.treesitter = {
   ensure_installed = {
     "vim",

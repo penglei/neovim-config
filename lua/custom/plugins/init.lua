@@ -27,6 +27,10 @@ return {
     }
   },
 
+  ["NvChad/nvterm"] = {
+    override_options = overrides.nvterm,
+  },
+
   -- Override plugin definition options --
   ----------------------------------------
 
@@ -38,6 +42,19 @@ return {
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfig"
+      -- lspconfig.gopls.setup {
+      --   cmd = {"gopls", "serve"},
+      --   filetypes = {"go", "gomod"},
+      --   root_dir = require("lspconfig/util").root_pattern("go.work", "go.mod", ".git"),
+      --   settings = {
+      --     gopls = {
+      --       analyses = {
+      --         unusedparams = true,
+      --       },
+      --       staticcheck = true,
+      --     },
+      --   },
+      -- }
     end,
   },
 
@@ -56,6 +73,15 @@ return {
       require "custom.plugins.null-ls"
     end,
   },
+
+  ["ray-x/guihua.lua"] = {},
+  ["ray-x/go.nvim"] = {
+    config = function()
+      require('go').setup({
+        comment_placeholder = '   ',
+      })
+    end
+  }
 
   -- ['LnL7/vim-nix'] = {}  -- replaced by treesitter
 }
