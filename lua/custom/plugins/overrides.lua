@@ -1,5 +1,16 @@
 local M = {}
 
+M.alpha = {
+  header = {
+    val = {
+      "        ___               ___  ",
+     "       (0 0)             (o o) ",
+    "      (  V  )  ⊢γ ⇔ ⊨γ  (  V  ) ",
+    "      --m-m---------------m-m--",
+    "                                  ",
+    },
+  },
+}
 M.treesitter = {
   ensure_installed = {
     "vim",
