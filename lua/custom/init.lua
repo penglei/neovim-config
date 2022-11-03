@@ -10,6 +10,10 @@
 local opt = vim.opt
 local g = vim.g
 
+opt.foldmethod = "syntax"
+opt.foldlevel = 2
+
 opt.title = false
 opt.timeoutlen = 1200
+
 g.mapleader = ","
