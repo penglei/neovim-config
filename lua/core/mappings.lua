@@ -171,12 +171,12 @@ M.lspconfig = {
       "lsp signature_help",
     },
 
-    ["<leader>D"] = {
-      function()
-        vim.lsp.buf.type_definition()
-      end,
-      "lsp definition type",
-    },
+    -- ["<leader>D"] = {
+    --   function()
+    --     vim.lsp.buf.type_definition()
+    --   end,
+    --   "lsp definition type",
+    -- },
 
     ["<leader>ra"] = {
       function()
@@ -206,18 +206,25 @@ M.lspconfig = {
       "floating diagnostic",
     },
 
+    ["<leader>D"] = {
+      function()
+        vim.diagnostic.open_float()
+      end,
+      "show diagnostic under current cursor",
+    },
+
     ["[d"] = {
       function()
         vim.diagnostic.goto_prev()
       end,
-      "goto prev",
+      "goto prev diagnostic",
     },
 
-    ["d]"] = {
+    ["]d"] = {
       function()
         vim.diagnostic.goto_next()
       end,
-      "goto_next",
+      "goto next diagnostic",
     },
 
     ["<leader>q"] = {
@@ -262,7 +269,7 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+    ["<leader>r"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
 
     -- focus
     ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
