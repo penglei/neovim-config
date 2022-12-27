@@ -36,6 +36,7 @@ M.nvterm =  {
   }
 }
 
+-- https://github.com/nvim-treesitter/nvim-treesitter
 M.treesitter = {
   ensure_installed = {
     "vim",
@@ -43,7 +44,11 @@ M.treesitter = {
     "html",
     "css",
     "c",
+    "cpp",
     "nix",
+    "elvish",
+    "go",
+    "gomod",
   },
 }
 
